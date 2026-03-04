@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>LOUNARA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>LOUNARA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
 
@@ -17,11 +14,12 @@
   <img src="images/logo.png" alt="LOUNARA" class="logo">
   <p class="subtitle">Collection Femme & Beauté</p>
 
-  <!-- Menu catégories -->
   <nav class="categories-menu">
     <a href="#" data-category="All">Tous</a>
     <a href="#" data-category="Vêtements">Vêtements</a>
-    <a href="#" data-category="Cosmétiques">Cosmétiques</a>
+    <a href="#" data-category="Sacs et accessoires">Sacs et accessoires</a>
+    <a href="#" data-category="Produits Beauté">Produits Beauté</a>
+    <a href="#" data-category="Parfums">Parfums</a>
   </nav>
 </header>
 
@@ -42,23 +40,12 @@
 </section>
 
 <footer>
-  <div class="footer-content">
-    © 2026 LOUNARA — Tous droits réservés
-  </div>
+  <div class="footer-content">© 2026 LOUNARA — Tous droits réservés</div>
 </footer>
 
-<!-- Bouton retour en haut -->
 <a href="#top" class="back-to-top" title="Retour en haut">↑</a>
 
 <script src="js/products.js"></script>
-<script>
-// Smooth scroll pour menu
-document.querySelectorAll('nav.categories-menu a').forEach(link=>{
-  link.addEventListener('click', e=>{
-    e.preventDefault();
-    document.querySelector('#produits').scrollIntoView({ behavior: 'smooth' });
-  });
-});
-</script>
+
 </body>
 </html>
