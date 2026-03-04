@@ -2,11 +2,11 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #fcf8f5; /* fond crème doux */
+  background-color: #fcf8f5;
   color: #111;
 }
 
-/* ===== Header / Logo ===== */
+/* ===== Header ===== */
 header {
   text-align: center;
   padding: 60px 20px 40px;
@@ -14,17 +14,17 @@ header {
 
 header .logo {
   max-width: 250px;
-  background-color: #f0e6e2; /* léger contraste pour faire ressortir le logo */
+  background-color: #f0e6e2;
   padding: 10px;
-  border-radius: 8px; /* doux et épuré */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* ombre subtile */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 header .subtitle {
   margin-top: 10px;
   font-family: 'Playfair Display', serif;
   font-size: 14px;
-  color: #a77a7a; /* rose poudré plus visible */
+  color: #a77a7a;
   letter-spacing: 2px;
 }
 
@@ -37,7 +37,7 @@ section h2 {
   color: #8c7b7b;
 }
 
-/* ===== Grilles de produits ===== */
+/* ===== Grid ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -47,13 +47,31 @@ section h2 {
   padding: 0 20px;
 }
 
-.item img {
+/* ===== Carousel ===== */
+.item .carousel {
+  position: relative;
   width: 100%;
-  height: auto;
-  display: block;
+  overflow: hidden;
   border-radius: 8px;
+  height: 400px;
 }
 
+.item .carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.item .carousel img:first-child {
+  opacity: 1;
+}
+
+/* ===== Item text ===== */
 .item h3 {
   font-family: 'Playfair Display', serif;
   font-size: 20px;
@@ -81,5 +99,8 @@ footer {
   }
   section h2 {
     font-size: 22px;
+  }
+  .item .carousel {
+    height: 250px;
   }
 }
