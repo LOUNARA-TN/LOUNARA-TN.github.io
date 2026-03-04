@@ -221,7 +221,7 @@ footer{
   text-decoration: none;
   color: #a77a7a;
   font-weight: 500;
-  font-size: 16px; /* un peu plus grand */
+  font-size: 16px;
   display: inline-flex;
   align-items: center;
   transition: color 0.3s;
@@ -231,11 +231,11 @@ footer{
   color: #000;
 }
 
-/* Flèche */
+/* Flèche SVG */
 .back-button .arrow {
-  font-size: 22px;   /* taille de la flèche */
+  width: 24px;
+  height: 24px;
   margin-right: 8px;
-  display: inline-block;
   transition: transform 0.3s;
 }
 
