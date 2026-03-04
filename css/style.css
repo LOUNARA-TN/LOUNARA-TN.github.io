@@ -210,3 +210,20 @@ footer{
 .contact-icons img:hover{
   transform:scale(1.15);
 }
+/* BOUTON RETOUR */
+.back-button{
+  max-width:1200px;
+  margin:30px auto 0;
+  padding:0 40px;
+}
+
+.back-button a{
+  text-decoration:none;
+  color:#a77a7a;
+  font-weight:500;
+  font-size:14px;
+}
+
+.back-button a:hover{
+  color:#000;
+}
