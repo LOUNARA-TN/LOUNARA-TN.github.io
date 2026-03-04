@@ -8,19 +8,37 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-  <img src="images/logo.png" alt="LOUNARA" class="logo">
+
+<header class="main-header">
+  <div class="header-top">
+    <img src="images/logo.png" alt="LOUNARA" class="logo">
+    <div class="header-social">
+      <a href="https://www.instagram.com/" target="_blank">IG</a>
+      <a href="https://www.facebook.com/" target="_blank">FB</a>
+    </div>
+  </div>
 </header>
 
-<main class="product-detail">
-  <h2 class="product-name"></h2>
-  <div class="product-carousel"></div>
-  <p class="product-description"></p>
+<main class="product-layout">
+
+  <div class="product-images">
+    <img class="main-image" src="" alt="">
+    <div class="thumbnails"></div>
+  </div>
+
+  <div class="product-info">
+    <h2 class="product-name"></h2>
+    <p class="product-description"></p>
+    <p class="order-info">Pour commander, nous contacter via Instagram, Facebook ou WhatsApp.</p>
+  </div>
+
 </main>
 
 <footer>
-  <div class="footer-content">© 2026 LOUNARA — Tous droits réservés</div>
+  © 2026 LOUNARA — Tous droits réservés
 </footer>
+
+<a href="https://wa.me/21600000000" target="_blank" class="whatsapp-float">💬</a>
 
 <script>
 const params = new URLSearchParams(window.location.search);
@@ -30,34 +48,31 @@ fetch('json/products.json')
 .then(res=>res.json())
 .then(products=>{
   const p = products.find(prod => prod.id === productId);
-  if(!p){ document.body.innerHTML="<h2>Produit non trouvé</h2>"; return; }
+  if(!p) return;
 
   document.querySelector('.product-name').textContent = p.name;
   document.querySelector('.product-description').textContent = p.description;
-  const carousel=document.querySelector('.product-carousel');
 
-  p.images.forEach((imgSrc,i)=>{
-    const img=document.createElement('img');
-    img.src=imgSrc;
-    img.alt=p.name+' - vue '+(i+1);
-    if(i===0) img.classList.add('active');
-    carousel.appendChild(img);
+  const mainImage = document.querySelector('.main-image');
+  const thumbnails = document.querySelector('.thumbnails');
 
-    img.addEventListener('click', ()=>{
-      carousel.querySelectorAll('img').forEach(im=>im.classList.remove('active'));
-      img.classList.add('active');
+  mainImage.src = p.images[0];
+
+  p.images.forEach((imgSrc,index)=>{
+    const thumb = document.createElement('img');
+    thumb.src = imgSrc;
+    thumb.classList.add('thumb');
+    if(index === 0) thumb.classList.add('active-thumb');
+    thumbnails.appendChild(thumb);
+
+    thumb.addEventListener('click', ()=>{
+      mainImage.src = imgSrc;
+      document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active-thumb'));
+      thumb.classList.add('active-thumb');
     });
   });
-
-  let current = 0;
-  const imgs = carousel.querySelectorAll('img');
-  function showNext(){
-    imgs.forEach(im=>im.classList.remove('active'));
-    imgs[current].classList.add('active');
-    current = (current+1)%imgs.length;
-  }
-  setInterval(showNext, 4000);
 });
 </script>
+
 </body>
 </html>
