@@ -243,3 +243,8 @@ footer{
 .back-button a:hover .arrow {
   transform: translateX(-5px);
 }
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
