@@ -5,14 +5,22 @@
 <title>LOUNARA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="images/favicon.png">
+
+<!-- Google Fonts optimisés -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.min.css">
+
+<style>
+/* CSS intégré */
+body{margin:0;font-family:Inter,sans-serif;background:#fff;color:#111}.main-header{padding:50px 20px 30px;border-bottom:1px solid #eee;text-align:center}.logo{max-width:190px;display:block;margin:0 auto}.subtitle{margin-top:15px;color:#a77a7a;letter-spacing:2px}.categories-menu{margin-top:25px;display:flex;justify-content:center;gap:35px}.categories-menu a{color:#7a5f5f;font-weight:500;text-decoration:none}.categories-menu a.active{color:#000;border-bottom:2px solid #a77a7a;padding-bottom:3px}.categories-menu a:hover{color:#000}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:50px;max-width:1200px;margin:70px auto;padding:0 40px}.item-link{color:inherit;text-decoration:none}.item-link img{width:100%;height:420px;object-fit:cover;border-radius:16px;transition:.4s}.item-link:hover img{transform:scale(1.05)}.item-link h3,.item-link p{text-align:center}.collection h2{text-align:center;font-family:'Playfair Display',serif;font-size:28px;margin-top:60px}.contact{padding:60px 20px;background:#f9f9f9;text-align:center}.contact-icons{margin-top:20px;display:flex;justify-content:center;gap:25px}.contact-icons img{width:28px;height:28px;transition:.3s}.contact-icons img:hover{transform:scale(1.15)}.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25d366;color:#fff;font-size:22px;padding:15px;border-radius:50%}footer{padding:40px;font-size:12px;color:#999;border-top:1px solid #eee}@media(max-width:600px){.categories-menu{display:flex;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:15px;padding:0 15px;box-sizing:border-box;-ms-overflow-style:none;scrollbar-width:none}.categories-menu a{flex:0 0 auto;white-space:nowrap}.categories-menu::-webkit-scrollbar{display:none}}
+</style>
 </head>
 <body>
 
 <header class="main-header">
   <a href="index.html">
-    <img src="images/logo.png" alt="LOUNARA" class="logo">
+    <img src="images/logo.png" alt="LOUNARA" class="logo" loading="lazy">
     <p class="subtitle">Collection Femme & Beauté</p>
   </a>
   
@@ -35,16 +43,56 @@
   <h2>Contact</h2>
   <p>Pour réserver, contactez-nous sur :</p>
   <div class="contact-icons">
-    <a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
-    <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
-    <a href="https://wa.me/21600000000" target="_blank"><img src="images/whatsapp.png" alt="Whatsapp"></a>
+    <a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.png" alt="Instagram" loading="lazy"></a>
+    <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" loading="lazy"></a>
+    <a href="https://wa.me/21600000000" target="_blank"><img src="images/whatsapp.png" alt="Whatsapp" loading="lazy"></a>
   </div>
 </section>
 
 <footer>© 2026 LOUNARA — Tous droits réservés</footer>
-
 <a href="https://wa.me/21600000000" target="_blank" class="whatsapp-float">💬</a>
 
-<script src="js/script.min.js" defer></script>
+<script defer>
+fetch("json/products.json").then(res=>res.json()).then(products=>{
+  const grid=document.querySelector(".grid");
+  const menuLinks=document.querySelectorAll(".categories-menu a");
+
+  function filter(category="All"){
+    grid.innerHTML="";
+    products.filter(p=>category==="All"||p.category===category)
+            .forEach(p=>{
+      const a=document.createElement("a");
+      a.href="product.html?id="+p.id;
+      a.className="item-link";
+
+      const img=document.createElement("img");
+      img.src=p.images[0];
+      img.alt=p.name;
+      img.loading="lazy";
+
+      const h3=document.createElement("h3");
+      h3.textContent=p.name;
+      const pDesc=document.createElement("p");
+      pDesc.textContent=p.description;
+
+      a.append(img,h3,pDesc);
+      grid.appendChild(a);
+    });
+  }
+
+  filter();
+
+  menuLinks.forEach(link=>{
+    link.addEventListener("click",e=>{
+      e.preventDefault();
+      const cat=link.dataset.category;
+      filter(cat);
+      menuLinks.forEach(l=>l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+});
+</script>
+
 </body>
 </html>
