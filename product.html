@@ -65,37 +65,7 @@
 <a href="https://wa.me/21600000000" target="_blank" class="whatsapp-float">💬</a>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const productId = params.get('id');
-
-fetch('json/products.json')
-.then(res=>res.json())
-.then(products=>{
-  const p = products.find(prod => prod.id === productId);
-  if(!p) return;
-
-  document.querySelector('.product-name').textContent = p.name;
-  document.querySelector('.product-description').textContent = p.description;
-
-  const mainImage = document.querySelector('.main-image');
-  const thumbnails = document.querySelector('.thumbnails');
-
-  mainImage.src = p.images[0];
-
-  p.images.forEach((imgSrc,index)=>{
-    const thumb = document.createElement('img');
-    thumb.src = imgSrc;
-    thumb.classList.add('thumb');
-    if(index===0) thumb.classList.add('active-thumb');
-    thumbnails.appendChild(thumb);
-
-    thumb.addEventListener('click', ()=>{
-      mainImage.src = imgSrc;
-      document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active-thumb'));
-      thumb.classList.add('active-thumb');
-    });
-  });
-});
+const params=new URLSearchParams(window.location.search),productId=params.get("id");fetch("json/products.json").then(e=>e.json()).then(e=>{let t=e.find(e=>e.id===productId);if(!t)return;document.querySelector(".product-name").textContent=t.name,document.querySelector(".product-description").textContent=t.description;let c=document.querySelector(".main-image"),r=document.querySelector(".thumbnails");c.src=t.images[0],t.images.forEach((e,t)=>{let s=document.createElement("img");s.src=e,s.classList.add("thumb"),0===t&&s.classList.add("active-thumb"),r.appendChild(s),s.addEventListener("click",()=>{c.src=e,document.querySelectorAll(".thumb").forEach(e=>e.classList.remove("active-thumb")),s.classList.add("active-thumb")})})});
 </script>
 
 </body>
