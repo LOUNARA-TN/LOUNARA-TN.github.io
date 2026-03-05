@@ -2,6 +2,7 @@ fetch('json/products.json')
 .then(res=>res.json())
 .then(products=>{
   const container = document.querySelector('.grid');
+  const categoryLinks = document.querySelectorAll('.categories-menu a');
 
   function displayProducts(filter='All'){
     container.innerHTML='';
@@ -34,11 +35,19 @@ fetch('json/products.json')
 
   displayProducts();
 
-  document.querySelectorAll('.categories-menu a')
-  .forEach(link=>{
+  categoryLinks.forEach(link=>{
     link.addEventListener('click',e=>{
       e.preventDefault();
-      displayProducts(link.dataset.category);
+
+      const category = link.dataset.category;
+
+      displayProducts(category);
+
+      // retirer active de tous les liens
+      categoryLinks.forEach(l => l.classList.remove('active'));
+
+      // ajouter active au lien cliqué
+      link.classList.add('active');
     });
   });
 });
