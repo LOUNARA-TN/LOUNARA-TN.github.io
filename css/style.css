@@ -86,7 +86,6 @@ a {
   text-align:center;
 }
 
-/* CONTACT BAS */
 .contact{
   text-align:center;
   padding:60px 20px;
@@ -106,7 +105,6 @@ a {
   font-weight:500;
 }
 
-/* PRODUCT PAGE ZARA */
 .product-layout{
   display:flex;
   gap:80px;
@@ -164,7 +162,6 @@ a {
   font-weight:500;
 }
 
-/* WHATSAPP */
 .whatsapp-float{
   position:fixed;
   bottom:25px;
@@ -177,7 +174,6 @@ a {
   text-decoration:none;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
   .product-layout{
     flex-direction:column;
@@ -196,7 +192,7 @@ footer{
   color:#999;
   border-top:1px solid #eee;
 }
-/* TITRE PRODUITS CENTRÉ */
+
 .collection h2{
   text-align:center;
   font-family:'Playfair Display',serif;
@@ -204,7 +200,6 @@ footer{
   margin-top:60px;
 }
 
-/* CONTACT ICONS */
 .contact-icons{
   margin-top:20px;
   display:flex;
@@ -221,7 +216,7 @@ footer{
 .contact-icons img:hover{
   transform:scale(1.15);
 }
-/* BOUTON RETOUR */
+
 .back-button {
   max-width: 1200px;
   margin: 30px auto 0;
@@ -250,9 +245,22 @@ footer{
   transition: transform 0.3s;
 }
 
-/* Animation au hover : la flèche glisse légèrement vers la gauche */
 .back-button a:hover .arrow {
   transform: translateX(-5px);
+}
+
+@media(max-width:600px){
+  .categories-menu{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .categories-menu a{
+    flex: 0 0 auto;
+  }
 }
 
 
