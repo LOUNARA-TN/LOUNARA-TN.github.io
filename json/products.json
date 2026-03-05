@@ -1,9 +1,9 @@
 [
-  {"id":"look1","category":"Vêtements","name":"Veste Noire","description":"Veste élégante en coton premium. Coupe moderne et féminine.","images":["images/veste.avif","images/veste2.avif","images/veste3.avif"]},
-  {"id":"look2","category":"Vêtements","name":"Robe Satin","description":"Robe fluide parfaite pour l'été, style doux et élégant.","images":["images/robe.avif","images/robe2.avif","images/robe3.avif"]},
-  {"id":"ling1","category":"Lingerie","name":"Ensembe pantalon suspender","description":"Ensemble Pantalon Suspender Confortable à Lacets pour Femme","images":["images/lingerie.avif","images/lingerie2.avif","images/lingerie3.avif"]},
-  {"id":"bag1","category":"Sacs et accessoires","name":"Sac Cuir Noir","description":"Sac élégant en cuir véritable, pratique et stylé.","images":["images/sac.avif","images/sac2.avif","images/sac3.avif"]},
-  {"id":"cosmetic1","category":"Produits Beauté","name":"Rouge à Lèvres","description":"Fini doux et confortable, couleur pastel.","images":["images/rouge.avif","images/rouge2.avif","images/rouge3.avif"]},
-  {"id":"cosmetic2","category":"Produits Beauté","name":"Crème Visage","description":"Soin hydratant léger pour une peau lumineuse.","images":["images/creme.avif","images/creme2.avif","images/creme3.avif"]},
-  {"id":"perfume1","category":"Parfums","name":"Parfum Floral","description":"Parfum délicat aux notes florales, subtile et longue tenue.","images":["images/parfum.avif","images/parfum2.avif","images/parfum3.avif"]}
+  {"id":"look1","category":"Vêtements","name":"Veste Noire","description":"Veste élégante en coton premium. Coupe moderne et féminine.","badge":"Nouveau","images":["images/veste.avif","images/veste2.avif","images/veste3.avif"]},
+  {"id":"look2","category":"Vêtements","name":"Robe Satin","description":"Robe fluide parfaite pour l'été, style doux et élégant.","badge":"En stock","images":["images/robe.avif","images/robe2.avif","images/robe3.avif"]},
+  {"id":"ling1","category":"Lingerie","name":"Ensembe pantalon suspender","description":"Ensemble Pantalon Suspender Confortable à Lacets pour Femme","badge":"Rupture","images":["images/lingerie.avif","images/lingerie2.avif","images/lingerie3.avif"]},
+  {"id":"bag1","category":"Sacs et accessoires","name":"Sac Cuir Noir","description":"Sac élégant en cuir véritable, pratique et stylé.","badge":"En stock","images":["images/sac.avif","images/sac2.avif","images/sac3.avif"]},
+  {"id":"cosmetic1","category":"Produits Beauté","name":"Rouge à Lèvres","description":"Fini doux et confortable, couleur pastel.","badge":"Nouveau","images":["images/rouge.avif","images/rouge2.avif","images/rouge3.avif"]},
+  {"id":"cosmetic2","category":"Produits Beauté","name":"Crème Visage","description":"Soin hydratant léger pour une peau lumineuse.","badge":"En stock","images":["images/creme.avif","images/creme2.avif","images/creme3.avif"]},
+  {"id":"perfume1","category":"Parfums","name":"Parfum Floral","description":"Parfum délicat aux notes florales, subtile et longue tenue.","badge":"Nouveau","images":["images/parfum.avif","images/parfum2.avif","images/parfum3.avif"]}
 ]
