@@ -208,15 +208,11 @@ name.textContent=p.name;
 const desc=document.createElement("p");
 desc.textContent=p.description;
 
-const price=document.createElement("p");
-price.textContent=p.price;
-price.className="price";
-
 const source=document.createElement("p");
 source.textContent="Source : "+p.source;
 source.className="source";
 
-a.append(img,name,desc,price,source);
+a.append(img,name,desc,source);
 
 /* taille seulement si existe */
 if(p.size){
