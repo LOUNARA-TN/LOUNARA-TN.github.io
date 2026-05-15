@@ -90,7 +90,6 @@ body{margin:0;font-family:Inter,sans-serif}
 <div class="product-info">
 <h2 class="product-name"></h2>
 <p class="product-description"></p>
-<p class="product-price"></p>
 <p class="product-source"></p>
 <p class="product-size"></p>
 </div>
@@ -111,7 +110,6 @@ if(!p) return;
 
 document.querySelector(".product-name").textContent=p.name;
 document.querySelector(".product-description").textContent=p.description;
-document.querySelector(".product-price").textContent=p.price;
 document.querySelector(".product-source").textContent="Source : "+p.source;
 
 /* ✅ taille uniquement si existe */
